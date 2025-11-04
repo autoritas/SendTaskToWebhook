@@ -56,9 +56,9 @@ class SendTaskToWebhook extends Base
         return [
             'webhook_url' => [
                 'label' => t('Webhook URL'),
-                'type' => 'select',
+                'type' => 'text',
                 'required' => true,
-                'options' => $this->getWebhookOptions(),
+                'default' => '',
             ],
             'column_id' => [
                 'label' => t('Target column (only for move column)'),
@@ -69,6 +69,7 @@ class SendTaskToWebhook extends Base
             ],
         ];
     }
+
     private function getEventOptions()
     {
         return [
